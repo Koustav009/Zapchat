@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -15,6 +16,18 @@ class _LoginPageState extends State<LoginPage> {
           preferredSize:
               Size.fromHeight(MediaQuery.of(context).size.height / 5),
           child: AppBar(
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Get.toNamed('/roomdetails');
+                },
+                child: Text(
+                  "Skip",
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.onPrimaryContainer),
+                ),
+              ),
+            ],
             leadingWidth: 90,
             leading: Padding(
               padding: const EdgeInsets.all(4.0),
@@ -25,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: IconButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Get.back();
                     },
                     icon: Icon(Icons.arrow_back)),
               ),

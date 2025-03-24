@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+
 class CreateAccountscreen extends StatefulWidget {
   const CreateAccountscreen({super.key});
 
@@ -15,6 +17,18 @@ class _CreateAccountscreen extends State<CreateAccountscreen> {
           preferredSize:
               Size.fromHeight(MediaQuery.of(context).size.height / 5),
           child: AppBar(
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Get.toNamed('/roomdetails');
+                },
+                child: Text(
+                  "Skip",
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.onPrimaryContainer),
+                ),
+              ),
+            ],
             leadingWidth: 90,
             leading: Padding(
               padding: const EdgeInsets.all(4.0),

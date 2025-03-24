@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -18,6 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 bottomRight: Radius.circular(20),
                 bottomLeft: Radius.circular(20))),
         backgroundColor: const Color.fromARGB(255, 255, 226, 211),
+        // backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
         // flexibleSpace: Padding(
         //   padding: EdgeInsets.fromLTRB(35, 45, 0, 0),
         //   child: Container(
@@ -59,96 +61,103 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
           width: double.infinity,
           // color: const Color.fromARGB(255, 202, 231, 255),
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                "Zapchat",
-                style: TextStyle(
-                  // backgroundColor: Colors.cyan,
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF241437),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-              Container(
-                // color: Colors.amber,
-                child: Image.asset(
-                  'assets/images/homepage.png',
-                  height: 350,
+                const Text(
+                  "Zapchat",
+                  style: TextStyle(
+                    // backgroundColor: Colors.cyan,
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF241437),
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              const Text(
-                "Welcome to Zapchat.!",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF241437),
+                Container(
+                  // color: Colors.amber,
+                  child: Image.asset(
+                    'assets/images/homepage.png',
+                    height: 350,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Text(
-                "The Seemless Way of Chatting",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF241437),
+                const SizedBox(
+                  height: 40,
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/signup');
-                    },
-                    style: ButtonStyle(
-                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        backgroundColor:
-                            const WidgetStatePropertyAll(Color(0xFFE8505B))),
-                    child: const Text(
-                      "Signup",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 18),
+                const Text(
+                  "Welcome to Zapchat.!",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF241437),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "The Seemless Way of Chatting",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF241437),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigator.pushNamed(context, '/signup');
+                        Get.toNamed('/signup');
+                      },
+                      style: ButtonStyle(
+                          shape:
+                              WidgetStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              const WidgetStatePropertyAll(Color(0xFFE8505B))),
+                      child: const Text(
+                        "Signup",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 18),
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
-                    style: ButtonStyle(
-                        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        backgroundColor:
-                            const WidgetStatePropertyAll(Color(0xFF455A64))),
-                    child: const Text(
-                      " Login ",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 18),
+                    const SizedBox(
+                      width: 30,
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigator.pushNamed(context, '/login');
+                        Get.toNamed('/login');
+                      },
+                      style: ButtonStyle(
+                          shape:
+                              WidgetStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              const WidgetStatePropertyAll(Color(0xFF455A64))),
+                      child: const Text(
+                        " Login ",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 18),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           )),
     );
   }
