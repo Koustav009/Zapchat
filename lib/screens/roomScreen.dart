@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/controller/chatroomController.dart';
-import 'package:flutter_application_2/controller/websocketController.dart';
+import '../controller/chatroomController.dart';
+import '../controller/websocketController.dart';
 import 'package:get/get.dart';
 
 class Roomscreen extends StatelessWidget {
@@ -124,8 +124,9 @@ class Roomscreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () async {
                       var ok = await controller.createRoom();
-                      socketcontroller.connectToWebsocket();
+
                       if (ok) {
+                        socketcontroller.connectToWebsocket();
                         Get.toNamed('/chatroom');
                         Get.snackbar(
                           "Success",
@@ -188,8 +189,9 @@ class Roomscreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () async {
                       var ok = await controller.joinRoom();
-                      socketcontroller.connectToWebsocket();
+
                       if (ok) {
+                        socketcontroller.connectToWebsocket();
                         Get.toNamed('/chatroom');
                         Get.snackbar(
                           "Success",

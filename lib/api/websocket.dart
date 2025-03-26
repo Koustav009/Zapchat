@@ -63,4 +63,8 @@ class Websocket {
       print("Message send... ${jsonEncode(msg.toJson())}");
     }
   }
+
+  void disconnect() {
+    stompClient!.deactivate();
+  }
 }

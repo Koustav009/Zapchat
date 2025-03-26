@@ -35,6 +35,10 @@ class Websocketcontroller extends GetxController {
     socket.connectWebSocket();
   }
 
+  void disConnectToWebsocket() {
+    socket.disconnect();
+  }
+
   void sendMessaage() {
     // print("Blank or not==== ${sendMessegeController.text.trim()}");
     if (!sendMessegeController.text.trim().isEmpty)
